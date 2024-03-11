@@ -225,4 +225,23 @@
   <origin xyz="0.25 0.0 0.075" rpy="3.14159 0 0"/> 
   </joint>
 
+  <gazebo reference="base_link">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="right_wheel">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="left_wheel">
+    <material>Gazebo/White</material>
+  </gazebo>
+  <gazebo reference="front_caster">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="back_caster">
+    <material>Gazebo/Black</material>
+  </gazebo>
+  <gazebo reference="front_laser">
+    <material>Gazebo/Black</material>
+  </gazebo>
+
 </robot>
