@@ -8,7 +8,7 @@ project(my_rb1_gazebo)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  launch
+  roscpp
 )
 
 ## System dependencies are found with CMake's conventions
