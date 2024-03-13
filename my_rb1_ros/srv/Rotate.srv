@@ -1,0 +1,4 @@
+int32 degrees
+---
+bool success
+string result
