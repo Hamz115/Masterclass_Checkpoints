@@ -22,7 +22,8 @@ public:
         service_ = nh_.advertiseService("/rotate_robot", &RotateService::rotateCallback, this);
         odom_sub_ = nh_.subscribe("/odom", 1, &RotateService::odomCallback, this);
         twist_pub_ = nh_.advertise<geometry_msgs::Twist>("/cmd_vel", 1);
-    }
+        ROS_INFO("Service Ready")
+    ;}
 
     void odomCallback(const nav_msgs::Odometry::ConstPtr& msg) {
         current_yaw_ = tf::getYaw(msg->pose.pose.orientation);
@@ -43,13 +44,14 @@ public:
                 is_rotating_ = false;
                 
                 rotate_res_.result = "Robot rotated successfully.";
+                ROS_INFO("Service Completed: Robot Rotated Successfully")
                 
-            }
+            ;}
         }
     }
 
     bool rotateCallback(my_rb1_ros::Rotate::Request &req, my_rb1_ros::Rotate::Response &res) {
-        ROS_INFO("Received request to rotate by %d degrees.", req.degrees);
+        ROS_INFO("Service Requested: Received request to rotate by %d degrees.", req.degrees);
         desired_yaw_ = current_yaw_ + req.degrees * M_PI / 180.0;
         desired_yaw_ = atan2(sin(desired_yaw_), cos(desired_yaw_)); 
 
@@ -58,9 +60,9 @@ public:
         
         
         ros::Rate rate(10);
-        while (is_rotating_) {
+          while (is_rotating_ && ros::ok()) { // Ensure ROS is still running
             ros::spinOnce(); 
-            rate.sleep();
+             rate.sleep();
         }
 
         

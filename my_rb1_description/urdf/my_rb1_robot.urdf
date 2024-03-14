@@ -40,7 +40,7 @@
   <!-- front_caster_link -->
   <link name="front_caster">
     <inertial>
-      <mass value="0.25"/>
+      <mass value="0.5"/>
       <inertia ixx="6.25e-05" ixy="0" ixz="0" iyy="6.25e-05" iyz="0" izz="6.25e-05"/>
     </inertial>
     <visual>
@@ -63,7 +63,7 @@
   <!-- back_caster_link -->
   <link name="back_caster">
     <inertial>
-      <mass value="0.25"/>
+      <mass value="0.5"/>
       <inertia ixx="6.25e-05" ixy="0" ixz="0" iyy="6.25e-05" iyz="0" izz="6.25e-05"/>
     </inertial>
     <visual>
@@ -87,14 +87,14 @@
   <link name="right_wheel">
     <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="2.0"/>
+        <mass value="1.0"/>
         <inertia ixx="0.0025" ixy="0" ixz="0" iyy="0.0025" iyz="0" izz="0.00125"/>
     </inertial>
 
     <visual>
         <origin xyz="0 0 0" rpy="1.5707 0 0"/>
         <geometry>
-            <cylinder radius="0.026" length="0.1"/> 
+            <cylinder radius="0.025" length="0.025"/> 
         </geometry>
         <material name="red">
             <color rgba="1 0 0 1"/>
@@ -104,7 +104,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="1.5707 0 0"/>
         <geometry>
-            <cylinder radius="0.026" length="0.1"/> 
+            <cylinder radius="0.025" length="0.025"/> 
         </geometry>
     </collision>
 
@@ -114,14 +114,14 @@
   <link name="left_wheel">
     <inertial>
         <origin xyz="0 0 0" rpy="0 0 0"/>
-        <mass value="2.0"/>
+        <mass value="1.0"/>
         <inertia ixx="0.0025" ixy="0" ixz="0" iyy="0.0025" iyz="0" izz="0.00125"/>
     </inertial>
 
     <visual>
         <origin xyz="0 0 0" rpy="1.5707 0 0"/>
         <geometry>
-            <cylinder radius="0.026" length="0.1"/> 
+            <cylinder radius="0.025" length="0.025"/> 
         </geometry>
         <material name="red">
             <color rgba="1 0 0 1"/>
@@ -131,7 +131,7 @@
     <collision>
         <origin xyz="0 0 0" rpy="1.5707 0 0"/>
         <geometry>
-            <cylinder radius="0.026" length="0.1"/> 
+            <cylinder radius="0.025" length="0.025"/> 
         </geometry>
     </collision>
   </link> 
@@ -255,11 +255,11 @@
     <updateRate>100.0</updateRate>
     <leftJoint>left_wheel_joint</leftJoint>
     <rightJoint>right_wheel_joint</rightJoint>
-    <wheelSeparation>0.45</wheelSeparation>
-    <wheelDiameter>0.1</wheelDiameter>
-    <wheelTorque>5</wheelTorque>
-    <torque>5</torque>
-    <wheelAcceleration>0.5</wheelAcceleration>
+    <wheelSeparation>0.4</wheelSeparation>
+    <wheelDiameter>0.05</wheelDiameter>
+    <wheelTorque>15</wheelTorque>
+    <torque>15</torque>
+    <wheelAcceleration>1.5</wheelAcceleration>
     <commandTopic>cmd_vel</commandTopic>
     <odometryTopic>odom</odometryTopic>
     <odometryFrame>odom</odometryFrame>
