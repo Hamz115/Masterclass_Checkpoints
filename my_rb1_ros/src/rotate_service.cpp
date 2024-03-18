@@ -34,8 +34,8 @@ public:
     void adjustRobotOrientation() {
         double yaw_error = atan2(sin(desired_yaw_ - current_yaw_), cos(desired_yaw_ - current_yaw_));
         if (std::abs(yaw_error) > tolerance_) {
-            double Kp = 3.0; // Increased Kp for more aggressive response
-            double max_angular_velocity = 2.0; // Higher limit for faster rotation
+            double Kp = 2.0; // Increased Kp for more aggressive response
+            double max_angular_velocity = 1.5; // Higher limit for faster rotation
             geometry_msgs::Twist twist_cmd;
             twist_cmd.angular.z = std::max(std::min(Kp * yaw_error, max_angular_velocity), -max_angular_velocity);
             twist_pub_.publish(twist_cmd);
