@@ -4,173 +4,144 @@
   <!-- Link for the cylinder -->
   <link name="base_link">
     <inertial>
-    <mass value="25" />
-    <origin xyz="0 0 0" rpy="0 0 0" />
-    <inertia
-         ixx="0.5781"
-         ixy="0"
-         ixz="0"
-         iyy="0.5781"
-         iyz="0"
-         izz="0.78125" />
+        <mass value="25" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
+        <inertia ixx="0.5781" ixy="0" ixz="0" iyy="0.5781" iyz="0" izz="0.78125" /> 
     </inertial>
 
     <visual>
       <geometry>
         <cylinder radius="0.25" length="0.3"/>
       </geometry>
-
-      <material name="dark_blue">
-        <color rgba="0 0 0.5 1"/>
-      </material>
-
     </visual>
 
     <!-- Collision representation -->
     <collision>
-      <origin xyz="0.5 0 0" rpy="0 0 0" />
-
       <geometry>
         <cylinder radius="0.25" length="0.3"/>
       </geometry>
-
     </collision> 
+
+    <material name="dark_blue">
+        <color rgba="0 0 0.5 1"/>
+      </material>
   </link>
 
   <!-- front_caster_link -->
   <link name="front_caster">
     <inertial>
       <mass value="0.05"/>
-      <inertia ixx="6.25e-05" ixy="0" ixz="0" iyy="6.25e-05" iyz="0" izz="6.25e-05"/>
+      <inertia ixx="0.000020833" ixy="0" ixz="0" iyy="0.000020833" iyz="0" izz="0.000020833"/>
     </inertial>
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <sphere radius="0.025"/> 
       </geometry>
-      <material name="Grey">
-        <color rgba="0.6 0.6 0.6 1" />
-      </material>
     </visual>
+
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <sphere radius="0.025"/>
       </geometry>
     </collision>
+
+    <material name="Grey">
+        <color rgba="0.6 0.6 0.6 1" />
+      </material>
   </link>
 
   <!-- back_caster_link -->
   <link name="back_caster">
     <inertial>
       <mass value="0.05"/>
-      <inertia ixx="6.25e-05" ixy="0" ixz="0" iyy="6.25e-05" iyz="0" izz="6.25e-05"/>
+      <inertia ixx="0.000020833" ixy="0" ixz="0" iyy="0.000020833" iyz="0" izz="0.000020833"/>
     </inertial>
+
     <visual>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <sphere radius="0.025"/> 
       </geometry>
-      <material name="Grey">
-        <color rgba="0.6 0.6 0.6 1" />
-      </material>
     </visual>
+
     <collision>
-      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <sphere radius="0.025"/>
       </geometry>
     </collision>
+
+    <material name="Grey">
+        <color rgba="0.6 0.6 0.6 1" />
+      </material>
   </link>
 
   <!-- right_wheel -->
   <link name="right_wheel">
     <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="1.5707 0 0"/>
         <mass value="1.0"/>
-        <inertia ixx="0.0025" ixy="0" ixz="0" iyy="0.0025" iyz="0" izz="0.00125"/>
+        <inertia ixx="0.00020833" ixy="0" ixz="0" iyy="0.00020833" iyz="0" izz="0.0003125"/>
     </inertial>
 
     <visual>
-        <origin xyz="0 0 0" rpy="1.5707 0 0"/>
+        <origin rpy="1.5707 0 0"/>
         <geometry>
-            <cylinder radius="0.025" length="0.03"/> 
-        </geometry>
-        <material name="red">
-            <color rgba="1 0 0 1"/>
-        </material>    
+            <cylinder radius="0.025" length="0.025"/> 
+        </geometry>   
     </visual>
 
-    <collision>
-        <origin xyz="0 0 0" rpy="1.5707 0 0"/>
+    <collision> 
+        <origin rpy="1.5707 0 0"/> 
         <geometry>
-            <cylinder radius="0.025" length="0.03"/> 
+            <cylinder radius="0.025" length="0.025"/> 
         </geometry>
     </collision>
 
+    <material name="red">
+            <color rgba="1 0 0 1"/>
+        </material>  
   </link>
 
   <!-- left_wheel -->
   <link name="left_wheel">
     <inertial>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <origin xyz="0 0 0" rpy="1.5707 0 0"/>
         <mass value="1.0"/>
-        <inertia ixx="0.0025" ixy="0" ixz="0" iyy="0.0025" iyz="0" izz="0.00125"/>
+        <inertia ixx="0.00020833" ixy="0" ixz="0" iyy="0.00020833" iyz="0" izz="0.0003125"/>
     </inertial>
 
     <visual>
-        <origin xyz="0 0 0" rpy="1.5707 0 0"/>
+        <origin rpy="1.5707 0 0"/>
         <geometry>
             <cylinder radius="0.025" length="0.025"/> 
         </geometry>
-        <material name="red">
-            <color rgba="1 0 0 1"/>
-        </material>
     </visual>
 
     <collision>
-        <origin xyz="0 0 0" rpy="1.5707 0 0"/>
+        <origin rpy="1.5707 0 0"/>
         <geometry>
             <cylinder radius="0.025" length="0.025"/> 
         </geometry>
     </collision>
+
+    <material name="red">
+            <color rgba="1 0 0 1"/>
+    </material>
   </link> 
 
     <!-- base_footprint_link -->
-  <link name="base_footprint">
-    <inertial>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <mass value="0.001"/>
-    <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
-    </inertial>
-    <visual>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-            <box size="0.01 0.01 0.01"/> 
-        </geometry>
-        <material name="transparent">
-            <color rgba="0 0 0 0"/> 
-        </material>
-    </visual>
-    <collision>
-        <origin xyz="0 0 0" rpy="0 0 0"/>
-        <geometry>
-            <box size="0.01 0.01 0.01"/>
-        </geometry>
-    </collision>
-  </link>
+  <link name="base_footprint" />
 
   <!-- front_laser_link -->
   <link name="front_laser">
     <inertial>
-    <origin xyz="0 0 0" rpy="0 0 0"/>
-    <mass value="0.1"/> 
-    <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/> 
-    </inertial>
-    <collision>
         <origin xyz="0 0 0" rpy="0 0 0"/>
+        <mass value="0.1"/> 
+        <inertia ixx="0.000006667" ixy="0" ixz="0" iyy="0.00008667" iyz="0" izz="0.000012593"/> 
+    </inertial>
+
+    <collision>
         <geometry>
-        <box size="0.1 0.02 0.02"/>
+            <box size="0.1 0.02 0.02"/>
         </geometry>
     </collision>
   </link>
@@ -252,11 +223,11 @@
     <robotNamespace>/</robotNamespace>
     <publishTf>true</publishTf>
     <publishOdomTF>true</publishOdomTF>
-    <updateRate>100.0</updateRate>
+    <updateRate>30.0</updateRate>
     <leftJoint>left_wheel_joint</leftJoint>
     <rightJoint>right_wheel_joint</rightJoint>
-    <wheelSeparation>0.4</wheelSeparation>
-    <wheelDiameter>0.1</wheelDiameter>
+    <wheelSeparation>0.42</wheelSeparation>
+    <wheelDiameter>0.05</wheelDiameter>
     <wheelTorque>5</wheelTorque>
     <torque>5</torque>
     <wheelAcceleration>1.5</wheelAcceleration>
